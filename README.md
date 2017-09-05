@@ -32,7 +32,7 @@ One cell in a sheet maps onto a field in the data set.
 {
   "type": "cell_field",
   "cell": "Sheet 1'!A3",    // Standard Excel reference
-  "behavior": "update",   // Only update existing value for existing row
+  "behavior": "update",     // Only update existing value for existing row
   "identifier": {
     "table": "countries",
     "values": {
@@ -49,14 +49,14 @@ One row in a sheet maps onto a row in the data set.
 {
   "type": "rows_rows",
   "sheet": "Sheet 2",
-  "range": "4:",            // Closed or open row range 
-  "behavior": ["update","new"]  // Update and insert based on identifier
+  "range": "4:",                  // Closed or open row range 
+  "behavior": ["update","new"]    // Update and insert based on identifier
   "identifier": {
     "table": "country_data",
     "values": [
-      {"country_id": 45}    // id is equal to 45 in table
-      {"year": 2016}      // year attribute is 2016 in table
-      "district",       // district matches sheet to data set row
+      {"country_id": 45}          // id is equal to 45 in table
+      {"year": 2016}              // year attribute is 2016 in table
+      "district",                 // district matches sheet to data set row
     ]
   },
   "mapping": {
@@ -90,16 +90,16 @@ A range of cells maps onto a row in the data set.
 {
   "type": "range_rows",
   "sheet": "Sheet 1",
-  "range": "A3:A4,A6",          // Range length must be same as mapping
-  "behavior": ["update","new"]    // Update and insert based on identifier
+  "range": "A3:A4,A6",              // Range length must be same as mapping
+  "behavior": ["update","new"],     // Update and insert based on identifier
   "identifier": {
     "table": "country_population",
     "values": [
-      {"id": 5},          // id is equal to 5 in the table
+      {"id": 5},                    // id is equal to 5 in the table
       {"year": 2016}
     ]
   },
-  "mapping": [            // Array, in order through range
+  "mapping": [                      // Array, in order through range
     {
       "name": "male_population",
       "type": "integer"
